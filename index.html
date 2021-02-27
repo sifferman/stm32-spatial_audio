@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ethan Sifferman</title>
+    <title>Spatial Audio Headphones</title>
 </head>
 <body>
     <h1>Spatial Audio Headphones</h1>
@@ -15,28 +15,39 @@
         Apple has released headphones that simulate surround sound. By turning your head, the audio seems to change the location it comes from. I will do my best to replicate this feature. My final product will be used as follows:
     </p>
     <ol>
-        <li>Sync the connected HC-05 module to a
-            computer.
+        <li>Sync the connected HC-05 module to a computer.
         </li>
         <li>
-            Plug in headphones to the Discovery’s
-            headphone jack.
+            Plug in headphones to the Discovery’s headphone jack.
         </li>
         <li>
-            Run a custom C++ script on the computer to
-            send the wave file to the HC-05.
+            Run a custom C++ script on the computer to send the wave file to the HC-05.
         </li>
         <li>
-            Place the Discovery Board with its
-            accelerometer on your head.
+            Place the Discovery Board with its accelerometer on your head.
         </li>
         <li>
             Rotate your head to experience the 3D sound.
         </li>
     </ol>
+
+    <h2>2.26 Update</h2>
+    <p>
+        This week, I found a library on GitHub so that I can send a UART signal through C++ code.
+    </p>
+    <a href="https://github.com/manashmandal/SerialPort" target="_blank" rel="noopener noreferrer">SerialPort - C++ Library for Serial Communication with following criteria</a>
+    <p>
+        Using this, I redid lab 4 part a.
+    </p>
+    <img src="UART.png" alt="UART">
+    <p>
+        This weekend, I will send Wave file data instead of text. Over the week, I will solve the bounded buffer problem for incoming/playing samples.
+    </p>
+
     <h2>
         Block Diagram
     </h2>
     <img src="Block Diagram.svg" alt="Block Diagram">
+
 </body>
 </html>
