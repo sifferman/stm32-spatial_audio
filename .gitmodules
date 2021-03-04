@@ -1,0 +1,6 @@
+[submodule "pc/src/Wave-Parser"]
+	path = pc/src/Wave-Parser
+	url = git@github.com:E4tHam/Wave-Parser.git
+[submodule "pc/src/SerialPort"]
+	path = pc/src/SerialPort
+	url = git@github.com:manashmandal/SerialPort.git
