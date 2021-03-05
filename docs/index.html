@@ -31,6 +31,17 @@
         </li>
     </ol>
 
+    <h2>3.05 Update</h2>
+    <p>
+        This week I fixed bugs with UART and Bluetooth. Now I know that the HC-05 is too slow for my needs, so I will be instead using USB at 1.5Mbps.
+    </p>
+    <p>
+        I made a <a href="https://github.com/E4tHam/stm32-spatial_audio/" target="_blank" rel="noopener noreferrer">repository</a> for all my code. I have finished the PC code. In its <code>main()</code>, if the STM32 is ready, it will send audio samples. I also have a thread that is polling RX for status bytes from the STM32. If a 'g' was recieved, a sample will be sent; if a 'B' was recieved, it <code>main()</code> will stall.
+    </p>
+    <p>
+        The only thing I have left is setting up the headphone jack. I will be doing this next week while using this <a href="https://github.com/deater/vmw-meter/tree/master/stm32L476/chiptune_cs43l22" target="_blank" rel="noopener noreferrer">reference project</a>.
+    </p>
+
     <h2>2.26 Update</h2>
     <p>
         This week, I found a library on GitHub so that I can send a UART signal through C++ code.
