@@ -9,8 +9,8 @@
 # Variables
 
 EXE=play
-SOURCES=main.o SerialPort/src/SerialPort.o Wave-Parser/riff.o Wave-Parser/wave.o comstatus.o
-HEADERS=SerialPort/include/SerialPort.hpp comstatus.h Wave-Parser/riff.h Wave-Parser/wave.h Wave-Parser/wave_endian.h
+SOURCES=main.o SerialPort/SerialPort.o Wave-Parser/riff.o Wave-Parser/wave.o comstatus.o
+HEADERS=SerialPort/SerialPort.hpp comstatus.h Wave-Parser/riff.h Wave-Parser/wave.h Wave-Parser/wave_endian.h
 
 # REMOVE=out.txt
 

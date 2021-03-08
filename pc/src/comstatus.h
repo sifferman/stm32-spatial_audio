@@ -4,7 +4,7 @@
 #ifndef __COMSTATUS_H
 #define __COMSTATUS_H
 
-#include "SerialPort/include/SerialPort.hpp"
+#include "SerialPort/SerialPort.hpp"
 
 #include <thread>
 

@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string.h>
 
-#include "SerialPort/include/SerialPort.hpp"
+#include "SerialPort/SerialPort.hpp"
 #include "Wave-Parser/wave.h"
 #include "comstatus.h"
 
