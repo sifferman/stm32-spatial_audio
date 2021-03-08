@@ -8,6 +8,9 @@
 
 #include "UART.h"
 #include "sample_buffer.h"
+#include "LCD.h"
+
+uint8_t LCD_MESSAGE[6];
 
 
 void USART_Init( USART_TypeDef * USARTx ) {
@@ -28,6 +31,7 @@ void USART_Init( USART_TypeDef * USARTx ) {
   
   // Enable Interrupt
   USARTx  -> CR1      |=  USART_CR1_RXNEIE;
+  // USARTx  -> CR1      |=  USART_CR1_TXEIE;
   
   // Configure and Enable in NVIC
   if ( USARTx == USART1 ) {
@@ -162,45 +166,70 @@ volatile uint16_t left_sample, right_sample;
 void handle_RXNE( USART_TypeDef * USARTx ) {
   // little endian
   uint8_t RDR = ( USARTx->RDR & 0xFF );
+  
   switch ( state ) {
     case left_l:
+      LCD_MESSAGE[0] = 'l';
+      LCD_MESSAGE[1] = 'L';
       left_sample = 0;
       left_sample |= RDR;
       state = left_u;
       break;
     case left_u:
+      LCD_MESSAGE[0] = 'l';
+      LCD_MESSAGE[1] = 'U';
       left_sample |= (RDR<<8);
       state = right_l;
       break;
     case right_l:
+      LCD_MESSAGE[0] = 'r';
+      LCD_MESSAGE[1] = 'L';
       right_sample = 0;
       right_sample |= RDR;
       state = right_u;
       break;
     case right_u:
+      LCD_MESSAGE[0] = 'r';
+      LCD_MESSAGE[1] = 'U';
       right_sample |= (RDR<<8);
       state = left_l;
       buffer_q_push( left_sample, right_sample );
-      // if TX is empty
-      //   send either "BAD" or "good"
       if ( USARTx->ISR & USART_ISR_TXE )
         USARTx->TDR = buffer_q_almostfull() ? 'B' : 'g';
       break;
     default: break;
   }
-
+  /*
+  LCD_MESSAGE[2] = '0' + (RDR / 100);
+  LCD_MESSAGE[3] = '0' + (RDR % 100) / 10;
+  LCD_MESSAGE[4] = '0' + (RDR % 10);
+  LCD_MESSAGE[5] = 0;
+  LCD_DisplayString( LCD_MESSAGE );
+  */
 }
+/*void handle_TXE( USART_TypeDef * USARTx ) {
+
+}*/
+
 void USART1_IRQHandler(void) {
   if ( USART1->ISR & USART_ISR_RXNE ) {
     handle_RXNE(USART1);
     USART1->ISR &= ~USART_ISR_RXNE;
   }
+  /*if ( USART1->ISR & USART_ISR_TXE ) {
+    handle_TXE( USART1 );
+    USART1->ISR &= ~USART_ISR_TXE;
+  }*/
 }
 void USART2_IRQHandler(void) {
   if ( USART2->ISR & USART_ISR_RXNE ) {
     handle_RXNE(USART2);
     USART2->ISR &= ~USART_ISR_RXNE;
   }
+  /*if ( USART2->ISR & USART_ISR_TXE ) {
+    handle_TXE( USART2 );
+    USART2->ISR &= ~USART_ISR_TXE;
+  }*/
 }
 
 uint8_t USART_Read (USART_TypeDef * USARTx) {

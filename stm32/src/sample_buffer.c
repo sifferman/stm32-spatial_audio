@@ -3,8 +3,11 @@
 
 #include "sample_buffer.h"
 
-#define BUFFER_MAX_SIZE ( 1UL << 20 )
-#define BUFFER_FULL_PADDING 100
+#define BUFFER_MAX_SIZE ( 1UL << 14 )
+#define BUFFER_FULL_PADDING ( 1UL << 13 )
+
+// #define BUFFER_MAX_SIZE 256
+// #define BUFFER_FULL_PADDING 10
 
 sample_t BUFFER_Q[ BUFFER_MAX_SIZE ];
 uint32_t BUFFER_Q_head;

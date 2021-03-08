@@ -49,6 +49,10 @@ int main(void) {
 
 
 	while(1) {
-    
-	}
+    /*
+    while ( !(USART2->ISR & USART_ISR_TXE) );
+    USART2->TDR = '+';
+    USART_Delay(1000);
+    */
+  }
 }
