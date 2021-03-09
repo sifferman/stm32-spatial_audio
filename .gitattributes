@@ -1,0 +1,19 @@
+
+# .gitattributes #
+
+
+# External Libraries
+stm32/src/SerialPort/*  linguist-vendored
+stm32/src/Wave-Parser/* linguist-vendored
+
+# PC
+pc/src/*.cpp    linguist-language=C++
+pc/src/*.h      linguist-language=C++
+
+# STM32
+stm32/src/*.c   linguist-language=C
+stm32/src/*.h   linguist-language=C
+stm32/keil/*    linguist-generated
+
+# Documentation
+docs/*         -linguist-documentation
