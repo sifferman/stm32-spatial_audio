@@ -3,8 +3,8 @@
 
 
 # External Libraries
-stm32/src/SerialPort/*  linguist-vendored
-stm32/src/Wave-Parser/* linguist-vendored
+pc/src/SerialPort/      linguist-vendored
+pc/src/Wave-Parser/     linguist-vendored
 
 # PC
 pc/src/*.cpp    linguist-language=C++
@@ -13,7 +13,11 @@ pc/src/*.h      linguist-language=C++
 # STM32
 stm32/src/*.c   linguist-language=C
 stm32/src/*.h   linguist-language=C
-stm32/keil/*    linguist-generated
+stm32/keil/     linguist-generated
+
+# ECE 153B Starter Code
+stm32/src/startup_stm32l476xx.s linguist-vendored
+stm32/src/stm32l476xx.h         linguist-vendored
 
 # Documentation
 docs/*         -linguist-documentation
