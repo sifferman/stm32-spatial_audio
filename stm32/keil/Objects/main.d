@@ -12,6 +12,9 @@
 .\objects\main.o: ..\src\SysClock.h
 .\objects\main.o: ..\src\UART.h
 .\objects\main.o: ..\src\sample_buffer.h
+.\objects\main.o: ..\src\i2c.h
+.\objects\main.o: ..\src\cs43l22.h
+.\objects\main.o: ..\src\SAI.h
 .\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 .\objects\main.o: ..\src\part.h

@@ -22,7 +22,7 @@ I (C:\Users\Ethan\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cms
 I (C:\Users\Ethan\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h)(0x5E8FB222)
 I (C:\Users\Ethan\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.5.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\system_stm32l4xx.h)(0x5F73A4E0)
 F (..\src\LED.h)(0x60260A35)()
-F (..\src\main.c)(0x60434AE9)(--c99 --gnu -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\Ethan\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Ethan\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.5.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32L476xx -D_RTE_-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+F (..\src\main.c)(0x604B3E65)(--c99 --gnu -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\Ethan\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Ethan\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.5.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32L476xx -D_RTE_-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
 I (..\src\stm32l476xx.h)(0x60238DA2)
 I (C:\Users\Ethan\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm4.h)(0x5E8FB222)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8F0FB2)
@@ -35,15 +35,18 @@ I (..\src\LED.h)(0x60260A35)
 I (..\src\LCD.h)(0x60271EC8)
 I (..\src\SysClock.h)(0x60238DA2)
 I (..\src\UART.h)(0x60260A2C)
-I (..\src\sample_buffer.h)(0x60409892)
+I (..\src\sample_buffer.h)(0x604B418A)
+I (..\src\i2c.h)(0x60498D10)
+I (..\src\cs43l22.h)(0x60498D10)
+I (..\src\SAI.h)(0x604ADBFE)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5E8F0FB2)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8F0FB2)
 I (..\src\part.h)(0x603FFACB)
 F (..\src\part.h)(0x603FFACB)()
-F (..\src\sample_buffer.c)(0x6046932E)(--c99 --gnu -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\Ethan\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Ethan\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.5.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32L476xx -D_RTE_-o .\objects\sample_buffer.o --omf_browse .\objects\sample_buffer.crf --depend .\objects\sample_buffer.d)
-I (..\src\sample_buffer.h)(0x60409892)
+F (..\src\sample_buffer.c)(0x604B3F9A)(--c99 --gnu -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\Ethan\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Ethan\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.5.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32L476xx -D_RTE_-o .\objects\sample_buffer.o --omf_browse .\objects\sample_buffer.crf --depend .\objects\sample_buffer.d)
+I (..\src\sample_buffer.h)(0x604B418A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8F0FB2)
-F (..\src\sample_buffer.h)(0x60409892)()
+F (..\src\sample_buffer.h)(0x604B418A)()
 F (..\src\startup_stm32l476xx.s)(0x60238DA2)(--cpu Cortex-M4.fp.sp --pd "__EVAL SETA 1" -g --apcs=interwork -I.\RTE\_Target_1-IC:\Users\Ethan\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Ethan\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.5.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include--pd "__UVISION_VERSION SETA 533" --pd "_RTE_ SETA 1" --pd "STM32L476xx SETA 1" --pd "_RTE_ SETA 1"--list .\listings\startup_stm32l476xx.lst --xref -o .\objects\startup_stm32l476xx.o --depend .\objects\startup_stm32l476xx.d)
 F (..\src\stm32l476xx.h)(0x60238DA2)()
 F (..\src\SysClock.c)(0x60238DA2)(--c99 --gnu -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\Ethan\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Ethan\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.5.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32L476xx -D_RTE_-o .\objects\sysclock.o --omf_browse .\objects\sysclock.crf --depend .\objects\sysclock.d)
@@ -57,7 +60,7 @@ I (C:\Users\Ethan\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cms
 I (C:\Users\Ethan\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h)(0x5E8FB222)
 I (C:\Users\Ethan\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.5.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\system_stm32l4xx.h)(0x5F73A4E0)
 F (..\src\SysClock.h)(0x60238DA2)()
-F (..\src\UART.c)(0x60469247)(--c99 --gnu -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\Ethan\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Ethan\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.5.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32L476xx -D_RTE_-o .\objects\uart.o --omf_browse .\objects\uart.crf --depend .\objects\uart.d)
+F (..\src\UART.c)(0x604B4212)(--c99 --gnu -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\Ethan\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Ethan\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.5.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32L476xx -D_RTE_-o .\objects\uart.o --omf_browse .\objects\uart.crf --depend .\objects\uart.d)
 I (..\src\UART.h)(0x60260A2C)
 I (..\src\stm32l476xx.h)(0x60238DA2)
 I (C:\Users\Ethan\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm4.h)(0x5E8FB222)
@@ -67,7 +70,7 @@ I (C:\Users\Ethan\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cms
 I (C:\Users\Ethan\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5E8FB222)
 I (C:\Users\Ethan\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h)(0x5E8FB222)
 I (C:\Users\Ethan\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.5.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\system_stm32l4xx.h)(0x5F73A4E0)
-I (..\src\sample_buffer.h)(0x60409892)
+I (..\src\sample_buffer.h)(0x604B418A)
 I (..\src\LCD.h)(0x60271EC8)
 F (..\src\UART.h)(0x60260A2C)()
 F (..\src\UART_printf.c)(0x603986AF)(--c99 --gnu -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\Ethan\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Ethan\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.5.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32L476xx -D_RTE_-o .\objects\uart_printf.o --omf_browse .\objects\uart_printf.crf --depend .\objects\uart_printf.d)
@@ -82,3 +85,40 @@ I (C:\Users\Ethan\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu
 I (C:\Users\Ethan\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.5.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\system_stm32l4xx.h)(0x5F73A4E0)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8F0FB2)
 I (..\src\part.h)(0x603FFACB)
+F (..\src\cs43l22.c)(0x604B0FC5)(--c99 --gnu -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\Ethan\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Ethan\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.5.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32L476xx -D_RTE_-o .\objects\cs43l22.o --omf_browse .\objects\cs43l22.crf --depend .\objects\cs43l22.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8F0FB2)
+I (..\src\stm32l476xx.h)(0x60238DA2)
+I (C:\Users\Ethan\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm4.h)(0x5E8FB222)
+I (C:\Users\Ethan\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_version.h)(0x5E8FB222)
+I (C:\Users\Ethan\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5E83E7C2)
+I (C:\Users\Ethan\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5E8FB222)
+I (C:\Users\Ethan\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h)(0x5E8FB222)
+I (C:\Users\Ethan\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.5.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\system_stm32l4xx.h)(0x5F73A4E0)
+I (..\src\i2c.h)(0x60498D10)
+I (..\src\cs43l22.h)(0x60498D10)
+F (..\src\cs43l22.h)(0x60498D10)()
+F (..\src\audio.c)(0x604ADC54)(--c99 --gnu -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\Ethan\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Ethan\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.5.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32L476xx -D_RTE_-o .\objects\audio.o --omf_browse .\objects\audio.crf --depend .\objects\audio.d)
+F (..\src\ethan_error.h)(0x604ADBFE)()
+F (..\src\SAI.h)(0x604ADBFE)()
+F (..\src\SAI.c)(0x604B3CF0)(--c99 --gnu -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\Ethan\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Ethan\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.5.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32L476xx -D_RTE_-o .\objects\sai.o --omf_browse .\objects\sai.crf --depend .\objects\sai.d)
+I (..\src\SAI.h)(0x604ADBFE)
+I (..\src\stm32l476xx.h)(0x60238DA2)
+I (C:\Users\Ethan\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm4.h)(0x5E8FB222)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8F0FB2)
+I (C:\Users\Ethan\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_version.h)(0x5E8FB222)
+I (C:\Users\Ethan\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5E83E7C2)
+I (C:\Users\Ethan\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5E8FB222)
+I (C:\Users\Ethan\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h)(0x5E8FB222)
+I (C:\Users\Ethan\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.5.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\system_stm32l4xx.h)(0x5F73A4E0)
+F (..\src\i2c.c)(0x60498CDE)(--c99 --gnu -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\Ethan\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Ethan\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.5.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32L476xx -D_RTE_-o .\objects\i2c.o --omf_browse .\objects\i2c.crf --depend .\objects\i2c.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8F0FB2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8F0FB2)
+I (..\src\stm32l476xx.h)(0x60238DA2)
+I (C:\Users\Ethan\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm4.h)(0x5E8FB222)
+I (C:\Users\Ethan\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_version.h)(0x5E8FB222)
+I (C:\Users\Ethan\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5E83E7C2)
+I (C:\Users\Ethan\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5E8FB222)
+I (C:\Users\Ethan\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h)(0x5E8FB222)
+I (C:\Users\Ethan\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.5.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\system_stm32l4xx.h)(0x5F73A4E0)
+I (..\src\i2c.h)(0x60498D10)
+F (..\src\i2c.h)(0x60498D10)()

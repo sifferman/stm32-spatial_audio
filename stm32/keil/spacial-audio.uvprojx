@@ -458,6 +458,46 @@
               <FileType>1</FileType>
               <FilePath>..\src\UART_printf.c</FilePath>
             </File>
+            <File>
+              <FileName>cs43l22.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\cs43l22.c</FilePath>
+            </File>
+            <File>
+              <FileName>cs43l22.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\cs43l22.h</FilePath>
+            </File>
+            <File>
+              <FileName>audio.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\audio.c</FilePath>
+            </File>
+            <File>
+              <FileName>ethan_error.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\ethan_error.h</FilePath>
+            </File>
+            <File>
+              <FileName>SAI.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\SAI.h</FilePath>
+            </File>
+            <File>
+              <FileName>SAI.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\SAI.c</FilePath>
+            </File>
+            <File>
+              <FileName>i2c.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\i2c.c</FilePath>
+            </File>
+            <File>
+              <FileName>i2c.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\i2c.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

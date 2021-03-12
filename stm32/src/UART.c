@@ -12,6 +12,8 @@
 
 uint8_t LCD_MESSAGE[6];
 
+#define _BAUD_RATE 2000000UL
+
 
 void USART_Init( USART_TypeDef * USARTx ) {
   // Disable USART before modifying USARTx registers
@@ -23,7 +25,7 @@ void USART_Init( USART_TypeDef * USARTx ) {
   USARTx  -> CR2      &= ~USART_CR2_STOP;
 
   // Set the baud rate to 9600.
-  USARTx  -> BRR       = 80000000 / 1411200;
+  USARTx  -> BRR       = 80000000 / _BAUD_RATE;
 
   // In the control registers, enable both the transmitter and receiver
   USARTx  -> CR1      |=  USART_CR1_TE;

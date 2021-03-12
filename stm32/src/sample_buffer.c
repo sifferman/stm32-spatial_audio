@@ -4,7 +4,7 @@
 #include "sample_buffer.h"
 
 #define BUFFER_MAX_SIZE ( 1UL << 14 )
-#define BUFFER_FULL_PADDING ( 1UL << 13 )
+#define BUFFER_FULL_PADDING ( BUFFER_MAX_SIZE >> 1 )
 
 // #define BUFFER_MAX_SIZE 256
 // #define BUFFER_FULL_PADDING 10

@@ -7,6 +7,10 @@
 ".\objects\sysclock.o"
 ".\objects\uart.o"
 ".\objects\uart_printf.o"
+".\objects\cs43l22.o"
+".\objects\audio.o"
+".\objects\sai.o"
+".\objects\i2c.o"
 --strict --scatter ".\Objects\spacial-audio.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
