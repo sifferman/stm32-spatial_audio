@@ -4,11 +4,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spatial Audio Headphones</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Spatial Audio Headphones</h1>
-    <h2>Ethan Sifferman</h2>
-    <h3>ece153b | W21</h3>
+    <header>
+        <h1>Spatial Audio Headphones</h1>
+        <div>Ethan Sifferman</div>
+        <div>ece153b | W21</div>
+    </header>
 
     <h2>Description</h2>
     <p>
@@ -18,7 +21,7 @@
         <li>Sync the connected HC-05 module to a computer.
         </li>
         <li>
-            Plug in headphones to the Discovery’s headphone jack.
+            Plug in headphones to the Discovery&rsquo;s headphone jack.
         </li>
         <li>
             Run a custom C++ script on the computer to send the wave file to the HC-05.
@@ -30,6 +33,24 @@
             Rotate your head to experience the 3D sound.
         </li>
     </ol>
+
+    <h2>3.12 Update</h2>
+    <p>
+        This week I set up the headphone jack. Oh my god this sucked! Thank you Emily for all the help! Here is the code: <a href="https://github.com/E4tHam/stm32-spatial_audio/tree/1f1e148eab3b8830f1612904a2ebf1cbfd6abaeb/stm32/src" target="_blank" rel="noopener noreferrer">Repository</a>. I heavily used this <a href="https://github.com/deater/vmw-meter/tree/master/stm32L476/chiptune_cs43l22" target="_blank" rel="noopener noreferrer">reference project</a> to learn how to interface with the cs43l22.
+    </p>
+    <p>
+        Now, I can open Wave files on my computer, convert them to a bit depth of 8, send them over UART, and have them play out of the headphone jack. However, the audio plays faster than the computer sends data, so the sound breaks up. I have several ideas for how to fix that. I also would likely want to add a volume knob to the board; that shouldn&rsquo;t be too hard.
+    </p>
+    <p>
+        Here is what I believe I have left to do:
+    </p>
+    <ul>
+        <li>Fix the bug where the PC stops sending data.</li>
+        <li>Find the goldilocks baud rate.</li>
+        <li>Add a volume knob.</li>
+        <li>Play audio samples at scaled volumes according to accelerometer.</li>
+    </ul>
+    
 
     <h2>3.05 Update</h2>
     <p>
