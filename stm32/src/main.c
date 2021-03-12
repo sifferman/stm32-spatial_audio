@@ -54,7 +54,6 @@ void Init_USARTx( int8_t part ) {
 
 
 int main(void) {
-	uint8_t last_sent = 0;
   
   System_Clock_Init(); // Switch System Clock = 80 MHz
 	LED_Init();
@@ -64,10 +63,9 @@ int main(void) {
 	
 	// Initialize UART -- change the argument depending on the part you are working on
 	Init_USARTx( _PART );
+
   
-  
-  
-  i2c_init(I2C1);
+  i2c_init( I2C1 );
 
 	SAI_Init();
 
@@ -105,6 +103,7 @@ int main(void) {
           SAI1_Block_A->DR = 0;
         buffer_q_pop();
         side = 'L';
+        USART2->TDR = buffer_q_almostfull() ? 'B' : buffer_q_empty() ? 'E' : 'g';
         break;
 
       default: side = 'L'; break;
@@ -112,32 +111,5 @@ int main(void) {
 
 	}
   
-  /*
-  uint8_t left_sample = 0, right_sample = 0;
-  while ( 1 ) if (
-    ( SAI1_Block_A->SR & SAI_xSR_FLVL) != SAI_xSR_FLVL
-      && (SAI1_Block_A->SR & SAI_xSR_FREQ)
-    ) {
-    switch ( side ) {
-      case 'L':
-        SAI1_Block_A->DR = ((uint16_t)left_sample<<8);
-        left_sample += 2;
-        side = 'R';
-        break;
-      case 'R':
-        SAI1_Block_A->DR = ((uint16_t)right_sample<<8);
-        right_sample += 0;
-        side = 'L';
-        break;
-      default: break;
-    }
-  }
-  */
-  /*
-	while(1) {
-    while ( !(USART2->ISR & USART_ISR_TXE) );
-    USART2->TDR = '+';
-    USART_Delay(1000);
-  }
-  */
+
 }

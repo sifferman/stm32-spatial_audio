@@ -11,8 +11,6 @@ typedef struct SAMPLE {
   uint16_t right;
 } sample_t;
 
-uint32_t format_sample_p( const sample_t * const );
-
 void buffer_q_init(void);
 uint8_t buffer_q_almostfull(void);
 uint8_t buffer_q_empty(void);

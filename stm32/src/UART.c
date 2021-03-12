@@ -12,6 +12,7 @@
 
 uint8_t LCD_MESSAGE[6];
 
+// #define _BAUD_RATE 1411200UL
 #define _BAUD_RATE 2000000UL
 
 
@@ -157,57 +158,26 @@ void UART1_GPIO_Init(void) {
 
 /* Read / Write */
 
-typedef enum STATE {
-  left_l, left_u,
-  right_l, right_u
-} state_t;
+volatile char state = 'L';
 
-volatile state_t state = left_l;
 volatile uint16_t left_sample, right_sample;
 
 void handle_RXNE( USART_TypeDef * USARTx ) {
-  // little endian
-  uint8_t RDR = ( USARTx->RDR & 0xFF );
-  
+  uint16_t RDR = ( USARTx->RDR & 0xFF );
   switch ( state ) {
-    case left_l:
-      LCD_MESSAGE[0] = 'l';
-      LCD_MESSAGE[1] = 'L';
-      left_sample = 0;
-      left_sample |= RDR;
-      state = left_u;
+    case 'L':
+      left_sample = (RDR<<8);
+      state = 'R';
       break;
-    case left_u:
-      LCD_MESSAGE[0] = 'l';
-      LCD_MESSAGE[1] = 'U';
-      left_sample |= (RDR<<8);
-      state = right_l;
-      break;
-    case right_l:
-      LCD_MESSAGE[0] = 'r';
-      LCD_MESSAGE[1] = 'L';
-      right_sample = 0;
-      right_sample |= RDR;
-      state = right_u;
-      break;
-    case right_u:
-      LCD_MESSAGE[0] = 'r';
-      LCD_MESSAGE[1] = 'U';
-      right_sample |= (RDR<<8);
-      state = left_l;
+    case 'R':
+      right_sample = (RDR<<8);
+      state = 'L';
       buffer_q_push( left_sample, right_sample );
-      if ( USARTx->ISR & USART_ISR_TXE )
-        USARTx->TDR = buffer_q_almostfull() ? 'B' : 'g';
+      USART2->TDR = buffer_q_almostfull() ? 'B' : buffer_q_empty() ? 'E' : 'g';
       break;
     default: break;
   }
-  /*
-  LCD_MESSAGE[2] = '0' + (RDR / 100);
-  LCD_MESSAGE[3] = '0' + (RDR % 100) / 10;
-  LCD_MESSAGE[4] = '0' + (RDR % 10);
-  LCD_MESSAGE[5] = 0;
-  LCD_DisplayString( LCD_MESSAGE );
-  */
+
 }
 /*void handle_TXE( USART_TypeDef * USARTx ) {
 

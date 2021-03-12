@@ -11,7 +11,7 @@
 #define MAX_DATA_LENGTH 255
 // #define _BAUD_RATE CBR_9600
 // #define _BAUD_RATE 1411200
-#define _BAUD_RATE 2000000
+#define _BAUD_RATE 2000000UL
 
 #include <windows.h>
 #include <iostream>

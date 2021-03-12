@@ -31,7 +31,7 @@ void ComStatus::pollRX() {
         }
 
         size_t size = std::strlen( RECIEVE );
-        printf("recieved: \"%s\"\n", RECIEVE);
+        // printf("recieved: \"%s\"\n", RECIEVE);
         switch ( RECIEVE[ size-1 ] ) {
             case 'g':
                 if ( ready == 0 ) printf("Enabling.\n");

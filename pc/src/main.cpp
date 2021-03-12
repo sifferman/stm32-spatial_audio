@@ -9,7 +9,7 @@
 #include <fcntl.h>
 #include <io.h>
 
-#define _PACKET_SIZE ( 1UL << 4 )
+#define _PACKET_SIZE ( 1UL << 6 )
 
 const char portName[] = "COM6";
 
@@ -25,10 +25,11 @@ int main( int argc, char * argv[] ) {
         return 1;
     }
 
+
     /* Init audio */
     audio = new Wave( argv[1] );
     if (   audio->GetNumChannels()  != 2
-        || audio->GetBitsPerSample()!= 16
+        || ( (audio->GetBitsPerSample() & 0b111) != 0 )
         || audio->GetSampleRate()   != 44100 ) {
         std::cerr << "[ERROR]: Bad wave file format." << std::endl;
         return 2;
@@ -48,9 +49,12 @@ int main( int argc, char * argv[] ) {
     stm32_status = new ComStatus( stm32 );
 
     /* Start sending audio samples */
-    size_t i = 0;
-    const uint8_t * mem = (const uint8_t *) audio->getSampleMemory();
-    uint32_t mem_size = audio->getSampleMemorySize();
+    uint32_t sample_i = 0;
+    uint16_t channel_i = 0;
+    const uint16_t numChannels = audio->GetNumChannels(); // 2
+    const uint32_t numSamples = audio->numSamples();
+    uint8_t buffer[ _PACKET_SIZE ];
+    
 
     while ( stm32_status->active() && stm32->isConnected() ) {
 
@@ -64,10 +68,23 @@ int main( int argc, char * argv[] ) {
             //     std::cout << (const uint16_t)*(mem + i + i_print) << " ";
             // std::cout << std::endl;
 
-            int writeErr = stm32->writeSerialPort( (const char*)mem + i, _PACKET_SIZE );
+            
+            for ( uint16_t i = 0; i < _PACKET_SIZE; i++ ) {
+                // fill buffer with 
+                buffer[ i ] = ( 
+                    audio->getSample( sample_i, channel_i )
+                    >> ( audio->GetBitsPerSample() - 8 )
+                );
+                // printf("New   : 0x%08x\n", (uint32_t)buffer[ i ]);
+                channel_i++;
+                if ( channel_i == numChannels ) {
+                    channel_i = 0;
+                    sample_i = ( sample_i + 1 ) % numSamples;
+                }
+            }
+
+            int writeErr = stm32->writeSerialPort( (const char*)buffer, _PACKET_SIZE );
             if ( writeErr == 0 ) break;
-            i += _PACKET_SIZE;
-            if ( i >= mem_size ) i = 0;
         }
     }
 
