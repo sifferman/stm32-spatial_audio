@@ -3,7 +3,7 @@
 
 #include "sample_buffer.h"
 
-#define BUFFER_MAX_SIZE ( 1UL << 14 )
+#define BUFFER_MAX_SIZE ( 1UL << 15 )
 #define BUFFER_FULL_PADDING ( BUFFER_MAX_SIZE >> 1 )
 
 // #define BUFFER_MAX_SIZE 256
@@ -61,7 +61,7 @@ void buffer_q_push_p( const sample_t * const in ) {
   buffer_q_push( in->left, in->right );
 }
 
-void buffer_q_push( const uint16_t left, const uint16_t right ) {
+void buffer_q_push( const uint8_t left, const uint8_t right ) {
   __disable_irq();
   if ( !BUFFER_Q_full ) {
 

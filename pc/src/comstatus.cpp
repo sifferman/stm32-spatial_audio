@@ -34,6 +34,7 @@ void ComStatus::pollRX() {
         // printf("recieved: \"%s\"\n", RECIEVE);
         switch ( RECIEVE[ size-1 ] ) {
             case 'g':
+            case 'E':
                 if ( ready == 0 ) printf("Enabling.\n");
                 ready = 1;
                 break;

@@ -3,9 +3,9 @@
 <title>Static Call Graph - [.\Objects\spacial-audio.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\spacial-audio.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Fri Mar 12 14:04:53 2021
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Sat Mar 13 02:56:17 2021
 <BR><P>
-<H3>Maximum Stack Usage =        100 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
+<H3>Maximum Stack Usage =        108 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
 __rt_entry_main &rArr; main &rArr; cs43l22_init &rArr; cs43l22_set_volume &rArr; i2c_send_data &rArr; i2c_start
 <P>
@@ -244,7 +244,7 @@ Global Symbols
 <P><STRONG><a name="[b2]"></a>__rt_entry_postsh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$00000009))
 
 <P><STRONG><a name="[69]"></a>__rt_entry_main</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$0000000D))
-<BR><BR>[Stack]<UL><LI>Max Depth = 100 + Unknown Stack Size
+<BR><BR>[Stack]<UL><LI>Max Depth = 108 + Unknown Stack Size
 <LI>Call Chain = __rt_entry_main &rArr; main &rArr; cs43l22_init &rArr; cs43l22_set_volume &rArr; i2c_send_data &rArr; i2c_start
 </UL>
 <BR>[Calls]<UL><LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exit
@@ -762,7 +762,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cs43l22_init
 </UL>
 
-<P><STRONG><a name="[7e]"></a>handle_RXNE</STRONG> (Thumb, 106 bytes, Stack size 16 bytes, uart.o(i.handle_RXNE))
+<P><STRONG><a name="[7e]"></a>handle_RXNE</STRONG> (Thumb, 94 bytes, Stack size 16 bytes, uart.o(i.handle_RXNE))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = handle_RXNE
 </UL>
 <BR>[Calls]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;buffer_q_push
@@ -805,8 +805,8 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;i2c_send_data
 </UL>
 
-<P><STRONG><a name="[6a]"></a>main</STRONG> (Thumb, 182 bytes, Stack size 0 bytes, main.o(i.main))
-<BR><BR>[Stack]<UL><LI>Max Depth = 100<LI>Call Chain = main &rArr; cs43l22_init &rArr; cs43l22_set_volume &rArr; i2c_send_data &rArr; i2c_start
+<P><STRONG><a name="[6a]"></a>main</STRONG> (Thumb, 220 bytes, Stack size 8 bytes, main.o(i.main))
+<BR><BR>[Stack]<UL><LI>Max Depth = 108<LI>Call Chain = main &rArr; cs43l22_init &rArr; cs43l22_set_volume &rArr; i2c_send_data &rArr; i2c_start
 </UL>
 <BR>[Calls]<UL><LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;i2c_init
 <LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cs43l22_play

@@ -12,8 +12,9 @@
 
 uint8_t LCD_MESSAGE[6];
 
-// #define _BAUD_RATE 1411200UL
-#define _BAUD_RATE 2000000UL
+#define _BAUD_RATE 1411200UL
+// #define _BAUD_RATE 1700000
+// #define _BAUD_RATE 2000000UL
 
 
 void USART_Init( USART_TypeDef * USARTx ) {
@@ -166,11 +167,11 @@ void handle_RXNE( USART_TypeDef * USARTx ) {
   uint16_t RDR = ( USARTx->RDR & 0xFF );
   switch ( state ) {
     case 'L':
-      left_sample = (RDR<<8);
+      left_sample = RDR;
       state = 'R';
       break;
     case 'R':
-      right_sample = (RDR<<8);
+      right_sample = RDR;
       state = 'L';
       buffer_q_push( left_sample, right_sample );
       USART2->TDR = buffer_q_almostfull() ? 'B' : buffer_q_empty() ? 'E' : 'g';

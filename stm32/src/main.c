@@ -79,6 +79,7 @@ int main(void) {
   while ( !buffer_q_almostfull() );
 
   const sample_t * current_sample;
+  sample_t previous_sample = {0,0};
   uint8_t side = 'L';
   // start sending samples
   while ( 1 ) if (
@@ -89,26 +90,32 @@ int main(void) {
 
       case 'L':
         current_sample = buffer_q_get();
-        if ( current_sample )
-          SAI1_Block_A->DR = current_sample->left;
-        else
+        if ( current_sample ) {
+          SAI1_Block_A->DR = ((uint16_t)current_sample->left)<<8;
+          previous_sample.left = current_sample->left;
+        } else {
+          SAI1_Block_A->DR = ((uint16_t)previous_sample.left)<<8;
           SAI1_Block_A->DR = 0;
+        }
         side = 'R';
         break;
 
       case 'R':
-        if ( current_sample )
-          SAI1_Block_A->DR = current_sample->right;
-        else
+        if ( current_sample ) {
+          SAI1_Block_A->DR = ((uint16_t)current_sample->right)<<8;
+          previous_sample.right = current_sample->right;
+        } else {
+          SAI1_Block_A->DR = ((uint16_t)previous_sample.right)<<8;
           SAI1_Block_A->DR = 0;
+        }
         buffer_q_pop();
         side = 'L';
-        USART2->TDR = buffer_q_almostfull() ? 'B' : buffer_q_empty() ? 'E' : 'g';
         break;
 
       default: side = 'L'; break;
     }
-
+    
+    USART2->TDR = buffer_q_almostfull() ? 'B' : buffer_q_empty() ? 'E' : 'g';
 	}
   
 
