@@ -39,41 +39,41 @@
 // part = 1: UART Communication with Termite
 // part = 2: Bluetooth Communication with Phone
 void Init_USARTx( int8_t part ) {
-	if ( part == 1 ) {
-		UART2_Init();
-		UART2_GPIO_Init();
-		USART_Init( USART2 );
-	} else if( part == 2 ) {
-		UART1_Init();
-		UART1_GPIO_Init();
-		USART_Init( USART1 );
-	} else {
-		// Do nothing...
-	}
+  if ( part == 1 ) {
+    UART2_Init();
+    UART2_GPIO_Init();
+    USART_Init( USART2 );
+  } else if( part == 2 ) {
+    UART1_Init();
+    UART1_GPIO_Init();
+    USART_Init( USART1 );
+  } else {
+    // Do nothing...
+  }
 }
 
 
 int main(void) {
   
   System_Clock_Init(); // Switch System Clock = 80 MHz
-	LED_Init();
+  LED_Init();
   LCD_Initialization();
   
   buffer_q_init();
-	
-	// Initialize UART -- change the argument depending on the part you are working on
-	Init_USARTx( _PART );
+  
+  // Initialize UART -- change the argument depending on the part you are working on
+  Init_USARTx( _PART );
 
   
   i2c_init( I2C1 );
 
-	SAI_Init();
+  SAI_Init();
 
-	/* Set up cs43l22 */
-	cs43l22_init();
+  /* Set up cs43l22 */
+  cs43l22_init();
   
   // Init cs43l22 over i2c
-	cs43l22_play();
+  cs43l22_play();
   
   // wait for main buffer to fill
   while ( !buffer_q_almostfull() );
@@ -116,7 +116,7 @@ int main(void) {
     }
     
     USART2->TDR = buffer_q_almostfull() ? 'B' : buffer_q_empty() ? 'E' : 'g';
-	}
+  }
   
 
 }
