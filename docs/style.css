@@ -25,9 +25,9 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: rgb(174,215,238);
-    background: radial-gradient(circle, var(--blue) 0%, #aeeeb400 100%);
+    box-shadow: 0 .8em 1em -.5em #0000005e;
+    text-align: center;
 }
 header > * {
-    margin: .4em auto;
+    margin: .6rem auto;
 }
