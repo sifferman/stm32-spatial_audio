@@ -31,3 +31,9 @@ header {
 header > * {
     margin: .6rem auto;
 }
+
+.video-box {
+    width: 100vw;
+    max-width: 100%;
+    text-align: center;
+}

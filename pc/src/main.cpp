@@ -8,8 +8,10 @@
 #include <stdio.h>
 #include <fcntl.h>
 #include <io.h>
+#include <algorithm>
 
-#define _PACKET_SIZE ( 1UL << 9 )
+#define __PACKET_SIZE ( 1UL << 9 )
+#define __MAX_SIZE ( __PACKET_SIZE << 11 )
 
 const char portName[] = "COM6";
 
@@ -51,11 +53,13 @@ int main( int argc, char * argv[] ) {
     /* Start sending audio samples */
     const uint32_t numSamples = audio->numSamples();
     const uint16_t numChannels = audio->GetNumChannels(); // 2
-    const uint32_t buffer_size = numSamples * numChannels;
+    const uint32_t buffer_size = std::min( (uint32_t)(numSamples * numChannels), (uint32_t)__MAX_SIZE );
+
+    std::cout << buffer_size << std::endl;
 
     uint8_t buffer[ buffer_size ];
     uint32_t buffer_i = 0;
-    for ( uint32_t sample_i = 0; sample_i < numSamples; sample_i++ ) {
+    for ( uint32_t sample_i = 0; (sample_i*numChannels) < buffer_size; sample_i++ ) {
         for ( uint16_t channel_i = 0; channel_i < numChannels; channel_i++ ) {
             buffer[ buffer_i ] = audio->getSample( sample_i, channel_i ) >> ( audio->GetBitsPerSample() - 8 );
             buffer_i++;
@@ -71,13 +75,13 @@ int main( int argc, char * argv[] ) {
 
         if ( stm32_status->ComIsReady() ) {
             // std::cout << "Sending: ";
-            // for ( uint8_t i_print = 0; i_print < _PACKET_SIZE; i_print++ )
+            // for ( uint8_t i_print = 0; i_print < __PACKET_SIZE; i_print++ )
             //     std::cout << (const uint16_t)*(mem + i + i_print) << " ";
             // std::cout << std::endl;
 
-            int writeErr = stm32->writeSerialPort( (const char*)buffer + buffer_i, _PACKET_SIZE );
+            int writeErr = stm32->writeSerialPort( (const char*)buffer + buffer_i, __PACKET_SIZE );
             if ( writeErr == 0 ) break;
-            buffer_i = (buffer_i + _PACKET_SIZE) % buffer_size;
+            buffer_i = (buffer_i + __PACKET_SIZE) % buffer_size;
         }
     }
 

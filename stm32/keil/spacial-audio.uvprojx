@@ -498,6 +498,36 @@
               <FileType>5</FileType>
               <FilePath>..\src\i2c.h</FilePath>
             </File>
+            <File>
+              <FileName>L3GD20.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\L3GD20.c</FilePath>
+            </File>
+            <File>
+              <FileName>L3GD20.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\L3GD20.h</FilePath>
+            </File>
+            <File>
+              <FileName>SPI.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\SPI.c</FilePath>
+            </File>
+            <File>
+              <FileName>SPI.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\SPI.h</FilePath>
+            </File>
+            <File>
+              <FileName>SysTimer.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\SysTimer.h</FilePath>
+            </File>
+            <File>
+              <FileName>SysTimer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\SysTimer.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
