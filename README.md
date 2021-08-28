@@ -23,6 +23,12 @@ Apple has released headphones that simulate surround sound. By turning your head
 4. Place the Discovery Board on your head.
 5. Rotate your head to experience the 3D sound.
 
+## Video
+
+Video Explanation:
+
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/obdn38XznAw/0.jpg)](https://www.youtube.com/watch?v=obdn38XznAw)
+
 ## Hardware Used
 
 * STM32L476VGTx Discovery Board
