@@ -15,7 +15,7 @@ Website: <https://ethan.sifferman.dev/stm32-spatial_audio/>
 
 ## Description
 
-Apple has released headphones that simulate surround sound. By turning your head, the audio seems to change the location it comes from. I will do my best to replicate this feature. My final product will be used as follows:
+Apple has released headphones that simulate surround sound. By turning your head, the audio seems to change the location it comes from. I did my best to replicate this feature on an [STM32L476G Discovery Board](https://www.st.com/en/evaluation-tools/32l476gdiscovery.html). My final product can be used as follows:
 
 1. Connect the Discovery Board to a computer.
 2. Plug in headphones to the Discovery’s headphone jack.
@@ -33,7 +33,7 @@ Video Explanation:
 
 ## Hardware Used
 
-* STM32L476VGTx Discovery Board
+* [STM32L476G Discovery Board](https://www.st.com/en/evaluation-tools/32l476gdiscovery.html)
 
 ## Libraries Used/Referenced
 
