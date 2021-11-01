@@ -27,7 +27,9 @@ Apple has released headphones that simulate surround sound. By turning your head
 
 Video Explanation:
 
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/obdn38XznAw/0.jpg)](https://www.youtube.com/watch?v=obdn38XznAw)
+*Note that this project is unfinished and the results in the video are fabricated to show what the desired behavior is.*
+
+[![stm32 spatial audio](https://img.youtube.com/vi/obdn38XznAw/0.jpg)](https://www.youtube.com/watch?v=obdn38XznAw)
 
 ## Hardware Used
 
